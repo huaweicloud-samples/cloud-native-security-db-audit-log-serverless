@@ -1,0 +1,30 @@
+# Terraform
+infra/.terraform/
+infra/*.tfstate
+infra/*.tfstate.*
+infra/terraform.tfplan
+infra/.terraform.lock.hcl
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+
+# Function packages
+src/functions/*.zip
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# others/ 是内部过程产物：验证报告含真实 project_id / domain_id / 账号名，
+# 以及迁移过程分析，不随产物上传 GitHub（本地保留，仅忽略提交）
+others/

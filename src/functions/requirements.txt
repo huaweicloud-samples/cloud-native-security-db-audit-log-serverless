@@ -1,0 +1,12 @@
+# FunctionGraph 函数依赖
+# FunctionGraph Python3.9 运行时已内置: obs (esdk-obs-python), boto3, requests
+# 以下为需额外安装的依赖（打包到函数 zip 中）
+
+# 华为云 OBS SDK（通常运行时已内置，如缺失则显式安装）
+esdk-obs-python>=3.20.0
+
+# DynamoDB 协议 SDK（用于 GeminiDB DynamoDB 兼容接口）
+boto3>=1.26.0
+
+# HTTP 请求
+requests>=2.28.0

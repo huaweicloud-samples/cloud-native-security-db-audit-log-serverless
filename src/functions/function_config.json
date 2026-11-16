@@ -1,0 +1,29 @@
+{
+  "worker": {
+    "memory_size": 512,
+    "timeout": 300,
+    "runtime": "Python3.9",
+    "description": "拉取 RDS 审计日志并上传 OBS"
+  },
+  "dispatcher": {
+    "memory_size": 256,
+    "timeout": 60,
+    "runtime": "Python3.9",
+    "description": "读取集群配置，扇出调用 Worker"
+  },
+  "discovery": {
+    "memory_size": 256,
+    "timeout": 120,
+    "runtime": "Python3.9",
+    "description": "自动发现已开启审计的 RDS MySQL 实例"
+  },
+  "schedules": {
+    "dispatcher": "0 */5 * * * ?",
+    "discovery": "0 0 2 * * ?"
+  },
+  "compression": {
+    "enabled": true,
+    "algorithm": "gzip"
+  },
+  "state_table": "AuditLogState"
+}
